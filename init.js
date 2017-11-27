@@ -95,6 +95,7 @@ function checkRedisVersion(callback){
     redisClient.info(function(error, response){
         if (error){
             log('error', logSystem, 'Redis version check failed');
+            process.exit()
             return;
         }
         var parts = response.split('\r\n');
